@@ -6,7 +6,7 @@ import time
 def main():
     #Locate yt search button to max screen
     # try:
-    x, y = pyautogui.locateCenterOnScreen('./video/top.png', grayscale=True, confidence=0.3)
+    x, y = pyautogui.locateCenterOnScreen('./top.png', grayscale=True, confidence=0.3)
     # except 
 
     # activate the Chrome window
@@ -54,7 +54,7 @@ def main():
     time.sleep(0.2)
 
     # find if video has 4k on it
-    x4k, y4k = pyautogui.locateCenterOnScreen('./video/4K.png', confidence=0.5)
+    x4k, y4k = pyautogui.locateCenterOnScreen('./4K.png', confidence=0.5)
 
     if x4k is None:
         pyautogui.moveTo(x=1200, y=570)
