@@ -1,4 +1,4 @@
-###Repo that contains functions that perform helpfull actions in the computer.
+# Repo that contains functions that perform helpfull actions in the computer.
 
 ## key.py
 Uses pynput library to analyze every word typed on the computer to check whether the word was typed with the CAPS LOCK on and replaces to a correct typing.
