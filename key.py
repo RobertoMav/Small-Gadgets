@@ -1,6 +1,6 @@
 from pynput import keyboard
 import time
-import video.yt_adjust
+import yt_adjust
 
 controller = keyboard.Controller()
 
@@ -113,7 +113,7 @@ def on_release(key):
     if key == keyboard.Key.f5:
         return False
     elif key == keyboard.Key.f6:
-        video.yt_adjust.main()
+        yt_adjust.main()
 
 with keyboard.Listener(on_press=on_press, on_release=on_release) as liste:
     liste.join()

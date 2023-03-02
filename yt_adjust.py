@@ -2,15 +2,16 @@
 import pyautogui
 import time
 
-
 def main():
     #Locate yt search button to max screen
-    # try:
-    x, y = pyautogui.locateCenterOnScreen('./top.png', grayscale=True, confidence=0.3)
-    # except 
+    try:
+        x, y = pyautogui.locateCenterOnScreen('./pics/top.png', grayscale=True, confidence=0.3)
+    except TypeError:
+        print("Yt page not found, only identified on main display")
+        return
 
     # activate the Chrome window
-    pyautogui.moveTo(x/2, y/2)
+    pyautogui.moveTo(x/2, y=(y/2)-50)
     pyautogui.click()
 
     # wait for the window to activate
@@ -54,14 +55,14 @@ def main():
     time.sleep(0.2)
 
     # find if video has 4k on it
-    x4k, y4k = pyautogui.locateCenterOnScreen('./4K.png', confidence=0.5)
-
-    if x4k is None:
-        pyautogui.moveTo(x=1200, y=570)
-        pyautogui.click()
-
-    else: 
+    try:
+        x4k, y4k = pyautogui.locateCenterOnScreen('./pics/4K.png', confidence=0.5, grayscale=True)
         pyautogui.moveTo(x=x4k/2, y=y4k/2)
+        pyautogui.click()
+    
+    #if not found, sets to HD
+    except TypeError:
+        pyautogui.moveTo(x=1200, y=570)
         pyautogui.click()
 
 
