@@ -58,9 +58,9 @@ a = a[0].tolist()
 
 def selection_sort(array):
     #Selection sort algo: parses through array and finds lowest element, setting it to its position
-    #set min to fist el
     compar = 0
     swaps = 0
+    print(array)
     #parse through list n times
     for j in range(len(array)-1):
         minimum = array[j]
